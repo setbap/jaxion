@@ -15,7 +15,11 @@ const customFonts = {
 const AuthenticationStack = createStackNavigator();
 const AuthenticationNavigator = () => (
   <AuthenticationStack.Navigator>
-    <AuthenticationStack.Screen name="Onboarding" component={Onboarding} />
+    <AuthenticationStack.Screen
+      options={{ headerShown: false }}
+      name="Onboarding"
+      component={Onboarding}
+    />
   </AuthenticationStack.Navigator>
 );
 
