@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { StyleSheet, Dimensions, View } from "react-native";
 import Slide, { SLIDE_HEIGHT } from "./Slide";
+import Dot from "../../component/Dot";
 import Animated, {
   multiply,
   divide,
@@ -67,6 +68,22 @@ const Onboarding = () => {
         </Animated.ScrollView>
       </Animated.View>
       <View style={styles.footer}>
+        <View
+          style={{
+            width: width,
+            height: 50,
+            position: "absolute",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 100,
+          }}
+        >
+          {slideItems.map((_, index) => (
+            <Dot currentIndex={divide(x, width)} index={index} key={index} />
+          ))}
+        </View>
+
         <Animated.View style={[styles.footerFill, { backgroundColor }]} />
         <Animated.View
           style={[
